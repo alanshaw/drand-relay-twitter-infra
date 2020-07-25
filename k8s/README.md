@@ -15,6 +15,7 @@ doctl kubernetes cluster kubeconfig save <your_cluster_name>
 kubectl create -f k8s/namespace.yaml
 # Apply configs
 kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/secrets.yaml
 ```
 
 ## Updating a deployment

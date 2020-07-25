@@ -1,0 +1,3 @@
+[submodule "src/drand-relay-twitter"]
+	path = src/drand-relay-twitter
+	url = https://github.com/drand/drand-relay-twitter.git

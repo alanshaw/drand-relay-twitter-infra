@@ -9,15 +9,11 @@ See [kubernetes deployment instructions](./k8s/README.md).
 ### Publish a new Docker image
 
 ```sh
-# Clone the rleay project
-git clone https://github.com/drand/drand-relay-twitter.git
-cd drand-relay-twitter
-
 # Build your container
 docker build -t drand-relay-twitter .
 
 # Get it to run
-docker run drand-relay-twitter
+docker run --env-file=./.env drand-relay-twitter
 
 # Commit new version
 docker commit -m="some commit message" <CONTAINER_ID> alanshaw/drand-relay-twitter

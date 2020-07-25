@@ -20,7 +20,26 @@ spec:
       containers:
       - name: drand-relay-twitter-container
         image: docker.io/alanshaw/drand-relay-twitter
-        # resources:
-        #   limits:
-        #     memory: 1Gi
+        env:
+        - name: TWITTER_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: drand-relay-twitter-secrets
+              key: twitterAPIKey
+        - name: TWITTER_API_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: drand-relay-twitter-secrets
+              key: twitterAPISecret
+        - name: TWITTER_ACCESS_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: drand-relay-twitter-secrets
+              key: twitterAccessToken
+        - name: TWITTER_ACCESS_TOKEN_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: drand-relay-twitter-secrets
+              key: twitterAccessTokenSecret
+
   
