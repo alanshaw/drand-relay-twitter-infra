@@ -14,8 +14,8 @@ doctl kubernetes cluster kubeconfig save <your_cluster_name>
 # Create the namespace that the app runs in
 kubectl create -f k8s/namespace.yaml
 # Apply configs
-kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/secrets.yaml
+kubectl apply -f k8s/deployment.yaml
 ```
 
 ## Updating a deployment
