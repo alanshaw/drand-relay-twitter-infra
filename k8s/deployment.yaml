@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: drand-relay-twitter
+  name: drand-relay-twitter-deployment
+  namespace: drand
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: drand-relay-twitter
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: drand-relay-twitter
+    spec:
+      containers:
+      - name: drand-relay-twitter-container
+        image: docker.io/alanshaw/drand-relay-twitter
+        # resources:
+        #   limits:
+        #     memory: 1Gi
+  
